@@ -10,6 +10,7 @@ namespace Multitenancy.Main
     {
         static void Main(string[] args)
         {
+            DataAccess.DataAccess dd = new DataAccess.DataAccess("");
         }
     }
 }
