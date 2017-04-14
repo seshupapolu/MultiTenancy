@@ -8,7 +8,6 @@ namespace Multitenancy.Repository
 {
     public class PhysicianRepository
     {
-
         private string _physicianConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["physicianConnection"].ConnectionString;
         public bool Create()
         {

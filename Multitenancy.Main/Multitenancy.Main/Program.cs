@@ -13,13 +13,11 @@ namespace Multitenancy.Main
         {
             using (var transaction = new System.Transactions.TransactionScope())
             {
-
+                //We can write abstract layer on top of TransactionScope Ex:UnitOfWork 
                 PhysicianRepository repo1 = new PhysicianRepository();
                 repo1.Create();
-
                 OrderRepository repo2 = new OrderRepository();
                 repo2.Create();
-
                 transaction.Complete();
             }
         }
