@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Multitenancy.Repository
+﻿namespace Multitenancy.Repository
 {
-    class OrderRepository
+    public class OrderRepository
     {
+        private  string _orderConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["orderConnection"].ConnectionString;
+        //System.Configuration.Configuration.;
+        public bool Create()
+        {
+            DataAccess.DataAccess db = new DataAccess.DataAccess(_orderConnectionString);
+            return db.Execute("insert into [order] values(1,'prod1')");
+
+        }
     }
 }

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Multitenancy.DataAccess\Multitenancy.DataAccess.csproj">
       <Project>{8aad7b9b-735c-44be-888e-3c26c789ff80}</Project>
       <Name>Multitenancy.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Multitenancy.Repository\Multitenancy.Repository.csproj">
+      <Project>{8BD831A2-CB93-4C16-A7A1-5DAFF8A6F8E9}</Project>
+      <Name>Multitenancy.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

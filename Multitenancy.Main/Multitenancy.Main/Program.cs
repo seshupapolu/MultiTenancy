@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Multitenancy.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,17 @@ namespace Multitenancy.Main
     {
         static void Main(string[] args)
         {
-            DataAccess.DataAccess dd = new DataAccess.DataAccess("");
+            using (var transaction = new System.Transactions.TransactionScope())
+            {
+
+                PhysicianRepository repo1 = new PhysicianRepository();
+                repo1.Create();
+
+                OrderRepository repo2 = new OrderRepository();
+                repo2.Create();
+
+                transaction.Complete();
+            }
         }
     }
 }
